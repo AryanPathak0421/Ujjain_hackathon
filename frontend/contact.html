@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Kumbh Ujjain 2028</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/contact.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-om"></i>
+                </div>
+                <div>
+                    <div class="logo-text">कुम्भ उज्जैन 2028 - सिंहस्थ</div>
+                    <div class="logo-subtitle">Smart Crowd Safety System</div>
+                </div>
+            </div>
+            <div class="current-time">
+                <i class="fas fa-clock"></i>
+                <span id="current-time-display">Loading...</span>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Back to Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="privacy.html" class="nav-link"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+                </li>
+                <li class="nav-item">
+                    <a href="terms.html" class="nav-link"><i class="fas fa-file-contract"></i> Terms of Service</a>
+                </li>
+                <li class="nav-item active">
+                    <a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="help.html" class="nav-link"><i class="fas fa-question-circle"></i> Help</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- Contact -->
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-envelope"></i>
+                    <h2>Contact Us</h2>
+                </div>
+                <div class="card-body">
+                    <div class="content-section">
+                        <p>We're here to help with any questions or concerns you may have about the Kumbh Ujjain 2028 Smart Crowd Safety System. Please reach out to us using any of the methods below.</p>
+                    </div>
+
+                    <div class="content-section">
+                        <h3><i class="fas fa-map-marker-alt"></i> Office Address</h3>
+                        <p>Kumbh Mela Administration Office<br>
+                        Ram Ghat Road, Ujjain<br>
+                        Madhya Pradesh 456006<br>
+                        India</p>
+                    </div>
+
+                    <div class="content-section">
+                        <h3><i class="fas fa-phone"></i> Phone Numbers</h3>
+                        <p>
+                            <strong>General Inquiries:</strong> +91-734-1234567<br>
+                            <strong>Technical Support:</strong> +91-734-123-TECH (8324)<br>
+                            <strong>Emergency Hotline:</strong> 1800-233-4567 (Toll-free)
+                        </p>
+                    </div>
+
+                    <div class="content-section">
+                        <h3><i class="fas fa-envelope"></i> Email Addresses</h3>
+                        <p>
+                            <strong>General Information:</strong> info@kumbhujjain2028.gov.in<br>
+                            <strong>Technical Support:</strong> support@kumbhujjain2028.gov.in<br>
+                            <strong>Safety Concerns:</strong> safety@kumbhujjain2028.gov.in<br>
+                            <strong>Media Inquiries:</strong> media@kumbhujjain2028.gov.in
+                        </p>
+                    </div>
+
+                    <div class="content-section">
+                        <h3><i class="fas fa-clock"></i> Office Hours</h3>
+                        <p>
+                            <strong>Monday to Friday:</strong> 9:00 AM - 6:00 PM IST<br>
+                            <strong>Saturday:</strong> 10:00 AM - 4:00 PM IST<br>
+                            <strong>Sunday:</strong> Closed<br>
+                            <strong>During Kumbh Mela:</strong> 24/7 operations
+                        </p>
+                    </div>
+
+                    <div class="content-section">
+                        <h3><i class="fas fa-comments"></i> Contact Form</h3>
+                        <form class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label" for="name">
+                                    <i class="fas fa-user"></i>
+                                    Full Name
+                                </label>
+                                <input type="text" id="name" class="form-input" required placeholder="Enter your full name">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="email">
+                                    <i class="fas fa-envelope"></i>
+                                    Email Address
+                                </label>
+                                <input type="email" id="email" class="form-input" required placeholder="Enter your email address">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="subject">
+                                    <i class="fas fa-tag"></i>
+                                    Subject
+                                </label>
+                                <select id="subject" class="form-select" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="technical">Technical Support</option>
+                                    <option value="safety">Safety Concern</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="message">
+                                    <i class="fas fa-comment"></i>
+                                    Message
+                                </label>
+                                <textarea id="message" class="form-textarea" required placeholder="Enter your message"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-block">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div>© 2028 Kumbh Mela Ujjain - Smart Crowd Safety System</div>
+            <div class="footer-links">
+                <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                <a href="terms.html" class="footer-link">Terms of Service</a>
+                <a href="contact.html" class="footer-link">Contact</a>
+                <a href="help.html" class="footer-link">Help</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./JavaScript/contact.js">
+        
+    </script>
+</body>
+</html>

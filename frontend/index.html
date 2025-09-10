@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumbh Ujjain 2028 - Smart Crowd Safety System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="./CSS/index.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-om"></i>
+                </div>
+                <div>
+                    <div class="logo-text">कुम्भ उज्जैन 2028 - सिंहस्थ</div>
+                    <div class="logo-subtitle">Smart Crowd Safety System</div>
+                </div>
+            </div>
+            <div class="current-time">
+                <i class="fas fa-clock"></i>
+                <span id="current-time-display">Loading...</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="grid-2col">
+                <!-- Input Panel -->
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-calculator"></i>
+                        <h2>Hazard Assessment</h2>
+                    </div>
+                    <div class="card-body">
+                        <form id="hazardForm">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label class="form-label" for="crowd_density">
+                                        <i class="fas fa-users"></i>
+                                        Crowd Density (people/m²)
+                                    </label>
+                                    <input type="number" id="crowd_density" class="form-input" required min="0" max="20" step="0.1" placeholder="Enter density value">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="temperature">
+                                        <i class="fas fa-thermometer-half"></i>
+                                        Temperature (°C)
+                                    </label>
+                                    <input type="number" id="temperature" class="form-input" required min="0" max="50" placeholder="Enter temperature">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="movement_speed">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                        Movement Speed (m/s)
+                                    </label>
+                                    <input type="number" step="0.1" id="movement_speed" class="form-input" required min="0" max="5" placeholder="Enter speed">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        Location Zone
+                                    </label>
+                                    <select id="location" class="form-select" required>
+                                        <option value="">Select Zone</option>
+                                        <option value="main_ghat">Main Ghat Area</option>
+                                        <option value="ram_ghat">Ram Ghat</option>
+                                        <option value="entrance">Main Entrance</option>
+                                        <option value="parking">Parking Areas</option>
+                                        <option value="food_court">Food Courts</option>
+                                        <option value="accommodation">Accommodation Zone</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="time_of_day">
+                                        <i class="fas fa-clock"></i>
+                                        Time of Day
+                                    </label>
+                                    <select id="time_of_day" class="form-select" required>
+                                        <option value="">Select Time</option>
+                                        <option value="early_morning">Early Morning (4-8 AM)</option>
+                                        <option value="morning">Morning (8-12 PM)</option>
+                                        <option value="afternoon">Afternoon (12-4 PM)</option>
+                                        <option value="evening">Evening (4-8 PM)</option>
+                                        <option value="night">Night (8 PM-4 AM)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-block" style="margin-top: 1.5rem;">
+                                <i class="fas fa-search"></i> Analyze Risk Level
+                            </button>
+                        </form>
+
+                        <div id="result" class="result-box" style="display: none;">
+                            <h2 id="hazardLevel"></h2>
+                            <p id="hazardMessage"></p>
+                            <div class="risk-score">
+                                Risk Score: <span id="scoreValue">-</span>/100
+                            </div>
+                        </div>
+
+                        <div class="recommendations" id="recommendations" style="display: none;">
+                            <div class="recommendations-header">
+                                <i class="fas fa-lightbulb"></i>
+                                <h3>Safety Recommendations</h3>
+                            </div>
+                            <div id="recommendationsList"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dashboard Panel -->
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-chart-line"></i>
+                        <h2>Live Dashboard</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-value" id="totalVisitors">2,47,382</div>
+                                <div class="stat-label">Total Visitors Today</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value" id="currentDensity">4.2</div>
+                                <div class="stat-label">Avg Crowd Density</div>
+                            </div>
+                        </div>
+
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-header">
+                                    <div class="metric-title">
+                                        <i class="fas fa-users"></i>
+                                        <span>Current Crowd Level</span>
+                                    </div>
+                                    <span class="metric-trend" id="crowdTrend">Normal</span>
+                                </div>
+                                <div class="metric-value" id="livecrowd">Normal</div>
+                            </div>
+
+                            <div class="metric-card">
+                                <div class="metric-header">
+                                    <div class="metric-title">
+                                        <i class="fas fa-thermometer-half"></i>
+                                        <span>Weather Conditions</span>
+                                    </div>
+                                    <span class="metric-trend" id="weatherTrend">Good</span>
+                                </div>
+                                <div class="metric-value" id="liveWeather">28°C</div>
+                            </div>
+
+                            <div class="metric-card">
+                                <div class="metric-header">
+                                    <div class="metric-title">
+                                        <i class="fas fa-walking"></i>
+                                        <span>Movement Flow</span>
+                                    </div>
+                                    <span class="metric-trend" id="movementTrend">Smooth</span>
+                                </div>
+                                <div class="metric-value" id="liveMovement">1.2 m/s</div>
+                            </div>
+                        </div>
+
+                        <div class="chart-container">
+                            <canvas id="crowdChart"></canvas>
+                        </div>
+
+                        <h3 style="margin: 1.5rem 0 1rem; display: flex; align-items: center; gap: 8px;">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            Active Alerts
+                        </h3>
+                        <div id="alertsList">
+                            <div class="alert-item">
+                                <i class="fas fa-info-circle alert-icon"></i>
+                                <div class="alert-content">
+                                    <strong>Zone Update:</strong> Main Ghat area experiencing moderate crowd buildup
+                                    <div class="alert-time">
+                                        <i class="fas fa-clock"></i> 2 minutes ago
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="emergency-contacts">
+                            <div class="emergency-header">
+                                <i class="fas fa-phone-alt"></i>
+                                <h3>Emergency Contacts</h3>
+                            </div>
+                            <div class="contact-item">
+                                <span><i class="fas fa-ambulance"></i> Medical Emergency</span>
+                                <strong>108</strong>
+                            </div>
+                            <div class="contact-item">
+                                <span><i class="fas fa-fire"></i> Fire Department</span>
+                                <strong>101</strong>
+                            </div>
+                            <div class="contact-item">
+                                <span><i class="fas fa-shield-alt"></i> Police Control Room</span>
+                                <strong>100</strong>
+                            </div>
+                            <div class="contact-item">
+                                <span><i class="fas fa-hands-helping"></i> Kumbh Helpline</span>
+                                <strong>1800-233-4567</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div>© 2028 Kumbh Mela Ujjain - Smart Crowd Safety System</div>
+            <div class="footer-links">
+                <a href="./privacy.html" class="footer-link">Privacy Policy</a>
+                <a href="./terms.html" class="footer-link">Terms of Service</a>
+                <a href="./contact.html" class="footer-link">Contact</a>
+                <a href="./help.html" class="footer-link">Help</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./JavaScript/index.js">
+       
+    </script>
+</body>
+</html>
