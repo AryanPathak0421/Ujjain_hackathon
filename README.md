@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🚨 Stampede Prevention Dashboard
 
 A real-time **crowd monitoring and risk detection dashboard** built with **React (Vite) + TailwindCSS**.  
@@ -28,3 +29,7 @@ The system provides **live camera feeds, crowd density alerts, PTZ (Pan-Tilt-Zoo
 ```bash
 git clone https://github.com/AryanPathak0421/Ujjain_hackathon
 cd stampede-dashboard
+=======
+# Ujjain_hackathon
+Stampede Prevention Dashboard is a real-time monitoring system that integrates AI-powered crowd analysis, live CCTV feeds, PTZ camera controls, and instant emergency alerts to help authorities detect overcrowding risks and prevent stampedes at large public gatherings.
+>>>>>>> be14d2a76f33cb6bfb0aba5a3bc737a6d7634d51
